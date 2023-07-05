@@ -1,0 +1,111 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+{% block title %}AllegroTracker{% endblock %}
+
+
+<div class="content">
+    <p>Allegro Tracker</p>
+</div>
+
+{% block left-menu-bar %}
+    <div class="menu-bar-button">
+        <a href="{% url 'add_product' %}">AddProduct</a>
+    </div>
+{% endblock %}
+{% block right-menu-bar %}
+    <p style="color: white">You are logged in as {{ request.user.username }}</p>
+    <div class="menu-bar-button">
+        <a href="{% url 'logout' %}">Log Out</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        {% if products %}
+            <div class="form-group" style="float: right">
+                <input type="text" class="form-control" id="searchField" placeholder="Search product">
+            </div>
+        {% endif %}
+        <h1>Products</h1>
+        {% if products %}
+            <div class="app-table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date added</th>
+                        {#                    <th>Current price</th>#}
+                        {#                    <th>Product url</th>#}
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in page_obj %}
+                        <tr>
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.date_added }}</td>
+                            {#                        <td>{{ product.current_price }}</td>#}
+                            {#                        <td>{{ product.product_url }}</td>#}
+                            <td><a href="{% url 'product_details' product.id %}">Details</a></td>
+                            <td><a href="{% url 'edit_product' product.id %}">Edit</a></td>
+                            <td><a href="{% url 'delete_product' product.id %}">Delete</a></td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="no-results" style="display: none; color: red">No results found.</p>
+            <div class="table-output">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date added</th>
+                        {#                    <th>Current price</th>#}
+                        {#                    <th>Product url</th>#}
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-container">
+                <div style="margin-top: 20px;">
+                    <strong>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</strong>
+                    <ul class="paginator" style="float: right; alignment: right;  list-style: none">
+                        {% if page_obj.has_previous %}
+                            <li style="display:inline-block;" {% if page_obj.number == 1 %} class="active" {% endif %}>
+                                <a href="?page=1">&laquo; 1</a>
+                            </li>
+                            <li style="display: inline-block"><a
+                                    href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                            <li style="display: inline-block"><a href="?page={{ page_obj.next_page_number }}">Next</a>
+                            </li>
+                            <li style="display: inline-block">
+                                <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}&raquo;</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <p>No products are available.</p>
+        {% endif %}
+    </div>
+    <script src='../../static/AllegroTracker/main.js'></script>
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Login page{% endblock %}
+
+{% block content %}
+    <div class="content">
+        {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+            <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+        {% else %}
+            <p>Please login to see this page.</p>
+        {% endif %}
+        <button id="redirect" class="menu-bar-button" style="margin-bottom: 10px">Don't have an account? Register here!</button>
+
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="Log In" class="menu-bar-button" style="border-radius: 5px;">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("redirect").addEventListener("click", function redirectFunction() {
+            window.location.href = "/AllegroTracker/register";
+        });
+    </script>
+{% endblock %}

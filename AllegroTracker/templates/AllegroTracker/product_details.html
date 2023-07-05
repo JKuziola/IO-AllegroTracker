@@ -1,0 +1,56 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Product details{% endblock %}
+
+{% block left-menu-bar %}
+    <div class="menu-bar-button">
+        <a href="{% url 'index' %}">Back</a>
+    </div>
+{% endblock %}
+{% block right-menu-bar %}
+    <p style="color: white">You are logged in as {{ request.user.username }}</p>
+    <div class="menu-bar-button">
+        <a href="{% url 'logout' %}">Log Out</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        {% if product %}
+            <h1>{{ product.name }}</h1>
+            <pre>{{ product.description }}</pre>
+            <h2>Product prices:</h2>
+            {% if prices %}
+                <ul>
+                    {% for price in page_obj %}
+                        <li>{{ price.price }} {{ price.currency }} ({{ price.date }})</li>
+                    {% endfor %}
+                </ul>
+                <div style="margin-top: 20px;">
+                    <strong>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</strong>
+                    <ul class="paginator" style="float: right; alignment: right;  list-style: none">
+                        {% if page_obj.has_previous %}
+                            <li style="display:inline-block;" {% if page_obj.number == 1 %} class="active" {% endif %}>
+                                <a href="?page=1">&laquo; 1</a>
+                            </li>
+                            <li style="display: inline-block"><a
+                                    href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                            <li style="display: inline-block"><a href="?page={{ page_obj.next_page_number }}">Next</a>
+                            </li>
+                            <li style="display: inline-block">
+                                <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}&raquo;</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <h1>{{ graph|safe }}</h1>
+                </div>
+            {% else %}
+                <p>No prices are available.</p>
+            {% endif %}
+        {% else %}
+            <p>The product {{ product_id }} does not exist.</p>
+        {% endif %}
+    </div>
+{% endblock %}

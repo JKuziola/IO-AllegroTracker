@@ -1,0 +1,139 @@
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+    --border-color: black;
+    --main-bar-button-color: orange;
+    --main-bar-button-hover-color: #fc186f;
+    --main-bar-button-text-color: black;
+    --main-bar-button-text-hover-color: white;
+    --text-color: black;
+}
+
+.dark-mode {
+    --primary-color: #181818;
+    --border-color: #b6b5b5;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    margin: 0;
+}
+
+pre, code, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    display: block;
+}
+
+ul {
+    padding: 0 0 0 1em;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.application-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+            "header-bar"
+            "content";
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.header-bar {
+    grid-area: header-bar;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-bar-button {
+    /*width: 70px;*/
+    height: 30px;
+    padding: 0 7px;
+    background-color: var(--main-bar-button-color);
+    color: var(--main-bar-button-text-color);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-bar-button:hover {
+    background-color: var(--main-bar-button-hover-color);
+    color: var(--main-bar-button-text-hover-color);
+}
+
+.menu-bar-button a {
+    color: var(--main-bar-button-text-color);
+}
+
+.menu-bar-button a:hover {
+    color: var(--main-bar-button-text-hover-color);
+}
+
+.change-theme-button {
+    width: 90px;
+    height: 30px;
+    background-color: var(--main-bar-button-color);
+    color: var(--main-bar-button-text-color);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.change-theme-button:hover {
+    background-color: var(--main-bar-button-hover-color);
+    color: var(--main-bar-button-text-hover-color);
+}
+
+.content {
+    grid-area: content;
+    overflow: auto;
+    margin: auto;
+    padding: 5px;
+}
+
+.show-password-toggle {
+    cursor: pointer;
+    transition: all;
+    background-color: var(--main-bar-button-color);
+    color: var(--main-bar-button-text-color);
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.show-password-toggle:hover {
+    background-color: var(--main-bar-button-hover-color);
+    color: var(--main-bar-button-text-hover-color);
+}

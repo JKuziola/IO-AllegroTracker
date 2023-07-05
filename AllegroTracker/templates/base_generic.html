@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block styles %}{% endblock %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Base generic{% endblock %}</title>
+    <link rel="stylesheet" href={% static "AllegroTracker/style.css" %}>
+</head>
+<body>
+    <div class="application-layout">
+        <div class="header-bar">
+
+            <div class="menu-bar">
+                {% block left-menu-bar %}{% endblock %}
+            </div>
+            <div class="menu-bar">
+                {% block right-menu-bar %}{% endblock %}
+
+                <div class="change-theme-button" id="change-theme" onclick="changeTheme()">Dark mode</div>
+                <script src={% static "AllegroTracker/changeMode.js" %}></script>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
