@@ -1,7 +1,7 @@
 # AllegroTracker
-Projekt stworzony w ramach przedmiotu Inżynieria Oprogramowania na Uniwersytecie Warszawskim.
+A project created as part of the Software Engineering course at the University of Warsaw.
 
-## O nas
+## About us
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
@@ -9,7 +9,7 @@ Projekt stworzony w ramach przedmiotu Inżynieria Oprogramowania na Uniwersyteci
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|  
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-### Użyte technologie
+### Technologies used
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
@@ -19,71 +19,71 @@ Projekt stworzony w ramach przedmiotu Inżynieria Oprogramowania na Uniwersyteci
 
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
-## Opis projektu
-Aplikacja webowa, która pozwala na śledzenie cen produktów na Allegro. Użytkownik może się zarejestrować i dodać 
-interesujące go produkty do listy obserwowanych. Aplikacja będzie sprawdzać cenę produktu i wysyłać powiadomienie, gdy 
-cena spadnie poniżej określonej przez użytkownika wartości.
+## Project description
+A web application that allows you to track products prices on Allegro. User can register and add
+products of interest to the watchlist. The app will check the price of the product and send you a notification when
+the price drops below the user-specified value.
 
-Ponieważ ceny produktów na Allegro nie zmieniają się zbyt często, skonfigurowaliśmy naszą aplikację do działania 
-w środowisku testowym Allegro. W tym celu stworzyliśmy konto na Allegro Sandbox, które pozwala na testowanie aplikacji
-bez konieczności korzystania z prawdziwych danych. Dodaliśmy do niego kilka ofert, które są dostępne pod linkami
-podanymi na końcu tego pliku.
+Since the prices of products on Allegro do not change very often, we have configured our application to work
+in the Allegro test environment. For this purpose, we have created an account on Allegro Sandbox, 
+which allows you to test the application without having to use real data. We have added a few offers to it, 
+which are available at the links listed at the end of this file.
 
-## Korzystanie z aplikacji
-Aplikacja została wdrożona na Heroku i jest dostępna pod adresem:
+## Using the app
+The application has been deployed on Heroku and is available at:
 https://allegro-tracker.herokuapp.com/.
 
-Nie ma zatem potrzeby uruchamiania jej lokalnie, jednak jeśli chcesz to zrobić, to poniżej znajdziesz instrukcję.
+So there is no need to run it locally, but if you want to do it, you will find instructions below.
 
-## Uruchamianie aplikacji lokalnie
+## Running the application locally
 
-Sklonuj repozytorium i przejdź do katalogu z projektem:
+Clone the repository and go to the project directory:
 ```shell
 git clone git@github.com:wojsza05/IO.git
 cd IO
 ```
 
-Stwórz i aktywuj środowisko wirtualne:
+Create and activate a virtual environment:
 ```shell
 virtualenv virtual
 source virtual/bin/activate
 ```
 
-Zainstaluj wymagane biblioteki:
+Install the required libraries:
 ```shell
 pip install -r requirements.txt
 ```
 
-Uruchom aplikację:
+Launch the application:
 ```shell
 python3 manage.py runserver
 ```
 
-Uruchom testy jednostkowe Django:
+You can run Django unit tests writing:
 ```shell
 python3 manage.py test AllegroTracker
 ```
 
-Aplikacja będzie dostępna pod adresem http://localhost:8000/.
+The application will be available at: http://localhost:8000/.
 
-### Domyślny użytkownik
+### Default user
     login: admin
     password: admin
 
-## Wygląd aplikacji
-### Strona logowania
-![Strona logowania](./images/LoginPage.png)
+## App appearance
+### Login page
+![Login Page](./images/LoginPage.png)
 
-### Strona główna
-![Strona główna](./images/MainPage.png)
+### Main page
+![Main page](./images/MainPage.png)
 
-### Dodanie produktu
-![Dodanie produktu](./images/AddProduct.png)
+### Add product
+![Add product](./images/AddProduct.png)
 
-### Widok produktu
-![Widok produktu](./images/DetailView.png)
+### Detail product view
+![Detail product view](./images/DetailView.png)
 
-## Nasze oferty:
+## Our offers:
 - https://allegro.pl.allegrosandbox.pl/oferta/dlugopis-bialy-klawiatura-7708611553
 - https://allegro.pl.allegrosandbox.pl/oferta/opaska-hej-7708611184
 - https://allegro.pl.allegrosandbox.pl/oferta/zestaw-naprawczy-wiazki-el-drzwi-107065-7708610767
