@@ -1,6 +1,14 @@
 # AllegroTracker
 Projekt stworzony w ramach przedmiotu Inżynieria Oprogramowania na Uniwersytecie Warszawskim.
 
+## O nas
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars2.githubusercontent.com/u/38833436?v=4" width="75px;"/><br /><sub><b>Jakub Kuziola</b></sub>](https://github.com/JKuziola)<br />  | [<img src="https://avatars3.githubusercontent.com/u/105707706?v=4" width="75px;"/><br /><sub><b>Wojciech Weremczuk</b></sub>](https://github.com/wojsza05)<br /> | [<img src="https://avatars1.githubusercontent.com/u/100534891?v=4" width="75px;"/><br /><sub><b>Konrad Mocarski</b></sub>](https://github.com/mocar27)<br /> | [<img src="https://avatars3.githubusercontent.com/u/64912735?v=4" width="75px;"/><br /><sub><b>Pawel Dec</b></sub>](https://github.com/koxkox111)<br /> | 
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|  
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ### Użyte technologie
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
