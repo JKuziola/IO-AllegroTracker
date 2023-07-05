@@ -64,7 +64,7 @@ Uruchom testy jednostkowe Django:
 python3 manage.py test AllegroTracker
 ```
 
-Aplikacja będzie dostępna pod adresem http://localhost:8000/
+Aplikacja będzie dostępna pod adresem http://localhost:8000/.
 
 ### Domyślny użytkownik
     login: admin
