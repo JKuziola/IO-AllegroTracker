@@ -43,6 +43,11 @@ git clone git@github.com:wojsza05/IO.git
 cd IO
 ```
 
+Add file .env in project home directory that contains
+SECRET_KEY = <DJANGO KEY>
+CLIENT_ID = <ALLEGRO API CLIENT ID>
+CLIENT_SECRET = <ALLEGRO API CLIENT SECRET>
+
 Create and activate a virtual environment:
 ```shell
 virtualenv virtual
