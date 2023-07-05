@@ -64,16 +64,16 @@ Aplikacja będzie dostępna pod adresem http://localhost:8000/
 
 ## Wygląd aplikacji
 ### Strona logowania
-![Strona logowania](imagesoginPage.png)
+![Strona logowania](./images/LoginPage.png)
 
 ### Strona główna
-![Strona główna](imagesainPage.png)
+![Strona główna](./images/MainPage.png)
 
 ### Dodanie produktu
-![Dodanie produktu](imagesddProduct.png)
+![Dodanie produktu](./images/AddProduct.png)
 
 ### Widok produktu
-![Widok produktu](imagesetailView.png)
+![Widok produktu](./images/DetailView.png)
 
 ## Nasze oferty:
 - https://allegro.pl.allegrosandbox.pl/oferta/dlugopis-bialy-klawiatura-7708611553
