@@ -31,7 +31,7 @@ which are available at the links listed at the end of this file.
 
 ## Using the app
 The application has been deployed on Heroku and is available at:
-https://allegro-tracker.herokuapp.com/.
+https://allegro-tracker.herokuapp.com/ (currently off).
 
 So there is no need to run it locally, but if you want to do it, you will find instructions below.
 
